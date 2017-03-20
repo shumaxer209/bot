@@ -14,8 +14,7 @@ app.post("/user", jsonParser, function (request, response) {
 });
  
 app.get("/", function(request, response){
-     
-    response.send();
+        response.send();
 });
  
 app.listen(3000);
