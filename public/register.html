@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+    <form action="/register" method="post" name="registerForm">
+        <label>Login</label><br>
+        <input type="text" name="userName" placeholder="Email Adress"/><br>
+        <input type="password" name="userPass" placeholder="Password"/><br>
+        <input type="submit" value="Send"/>
+    </form>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+        $("form").submit(function(e) {
+
+            e.preventDefault();
+             
+            var registerForm = document.forms["registerForm"];
+            var userName = registerForm.elements["userName"].value;
+            var userPass = registerForm.elements["userPass"].value;
+             
+            $.ajax({
+                type: "POST",
+                url: "/user",
+                data: JSON.stringify({userName: userName, userPass: userPass}),
+                dataType: "json",
+                contentType: "application/json",
+                success: function(data){ 
+                    console.log(data);
+                    },
+                });
+        });
+    </script>
+</body>
+<html>

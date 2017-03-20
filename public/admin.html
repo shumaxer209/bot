@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin page</title>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<form action="/admin" method="post" name="adminForm">
+        <label>Admin page</label><br>
+        <input type="submit" value="start">
+        <input type="text" name="minutes" value="30"><br>
+        <input type="submit" value="stop">
+        <input type="text" name="daysWeeks">
+        <select>
+        	<option value="days">days</option>
+        	<option value="weeks">weeks</option>
+        </select><br>
+        <label>List of people</label><br>
+        <div id="List"></div>
+        <input type="submit" value="Reset">
+
+</form>
+
+</body>
+</html>
